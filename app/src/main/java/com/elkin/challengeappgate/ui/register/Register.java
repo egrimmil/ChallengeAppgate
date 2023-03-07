@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.elkin.challengeappgate.R;
 import com.elkin.challengeappgate.base.BaseActivity;
@@ -36,13 +37,13 @@ public class Register extends BaseActivity {
             if (!name.equals("") && !pass.equals("")) {
                 viewModel.registerUser(name, pass);
             } else {
-                OnError(getString(R.string.regis_error_empty));
+                showError(getString(R.string.regis_error_empty));
             }
         });
     }
 
     @Override
-    public void OnSuccess(JSONObject data) {
-        super.OnSuccess(data);
+    public void showAlert(String message) {
+        super.showAlert(message);
     }
 }

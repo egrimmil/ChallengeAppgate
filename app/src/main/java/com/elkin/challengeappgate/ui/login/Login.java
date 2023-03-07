@@ -1,10 +1,14 @@
 package com.elkin.challengeappgate.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import com.elkin.challengeappgate.databinding.ActivityLoginBinding;
 
-public class Login extends AppCompatActivity {
+import android.os.Bundle;
+
+import com.elkin.challengeappgate.base.BaseActivity;
+import com.elkin.challengeappgate.databinding.ActivityLoginBinding;
+import com.elkin.challengeappgate.ui.register.Register;
+
+public class Login extends BaseActivity {
 
     private ActivityLoginBinding binding;
 
@@ -23,7 +27,7 @@ public class Login extends AppCompatActivity {
         });
 
         binding.btnRegisLogin.setOnClickListener(view -> {
-
+            onNavigate(this, Register.class);
         });
     }
 }

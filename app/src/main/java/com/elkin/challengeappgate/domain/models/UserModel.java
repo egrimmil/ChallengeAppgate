@@ -1,4 +1,4 @@
-package com.elkin.challengeappgate.domain;
+package com.elkin.challengeappgate.domain.models;
 
 public class UserModel {
     private final String userName;

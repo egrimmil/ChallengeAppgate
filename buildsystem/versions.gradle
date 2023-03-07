@@ -24,4 +24,7 @@ ext.libraries = [
 
         //LIFECYCLE
         lifecycle_version           : "2.5.1",
+
+        //ROOM
+        room_version                : "2.5.0",
 ]

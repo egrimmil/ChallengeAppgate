@@ -75,7 +75,7 @@
                 android:id="@+id/tfEtUserRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/log_user" />
+                android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,8 +96,7 @@
                 android:id="@+id/tfEtPassRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:text="@string/log_user" />
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

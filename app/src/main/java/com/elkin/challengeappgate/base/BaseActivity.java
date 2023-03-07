@@ -1,5 +1,8 @@
 package com.elkin.challengeappgate.base;
 
+import android.content.Intent;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.elkin.challengeappgate.utils.UiEvent;
@@ -9,15 +12,17 @@ import org.json.JSONObject;
 public class BaseActivity extends AppCompatActivity implements UiEvent {
 
     @Override
-    public void OnError(String message) {
+    public void showLoading(Boolean isLoading) {
 
     }
 
     @Override
-    public void OnSuccess(JSONObject data) {}
+    public void showError(String message) {
+
+    }
 
     @Override
-    public void OnLoading(Boolean isLoading) {
+    public void showAlert(String message) {
 
     }
 }
