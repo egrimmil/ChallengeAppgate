@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ChallengeAppgate</string>
+    <string name="action_settings">Settings</string>
+    <!-- commons -->
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="log_toolbar">Inicio Sesion</string>
+    <string name="log_title">Bienvenido</string>
+    <string name="log_desc">Ingresa tus credenciales</string>
+    <string name="log_user">Usuario</string>
+    <string name="log_pass">Contraseña</string>
+    <string name="log_btn_login">Ingresar</string>
+    <string name="log_btn_register">Registrate</string>
+    <string name="log_error_user_pass">Usuario y/o contraseña incorrectos</string>
+
+    <string name="regis_toolbar">Registro</string>
+    <string name="regis_title">Registrate</string>
+    <string name="regis_desc">Ingresa un usuario y contraseña para poder ingresar al app.</string>
+    <string name="regis_btn_register">Registrarse</string>
+    <string name="regis_error_empty">Debes diligenciar correctamente los datos</string>
+</resources>
