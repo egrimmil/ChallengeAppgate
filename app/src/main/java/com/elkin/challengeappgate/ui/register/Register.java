@@ -9,7 +9,10 @@ import android.util.Log;
 import com.elkin.challengeappgate.R;
 import com.elkin.challengeappgate.base.BaseActivity;
 import com.elkin.challengeappgate.databinding.ActivityRegisterBinding;
+import com.elkin.challengeappgate.ui.login.Login;
 import com.elkin.challengeappgate.utils.UiEvent;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONObject;
 
@@ -26,7 +29,7 @@ public class Register extends BaseActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         viewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
-        viewModel.setUiEvent(this);
+        viewModel.setParams(this, getApplicationContext());
         clickListeners();
     }
 
@@ -45,5 +48,7 @@ public class Register extends BaseActivity {
     @Override
     public void showAlert(String message) {
         super.showAlert(message);
+        Snackbar.make(findViewById(R.id.contentLayout), message, BaseTransientBottomBar.LENGTH_LONG).show();
+        onNavigate(this, Login.class);
     }
 }

@@ -8,7 +8,7 @@
     <string name="log_toolbar">Inicio Sesion</string>
     <string name="log_title">Bienvenido</string>
     <string name="log_desc">Ingresa tus credenciales</string>
-    <string name="log_user">Usuario</string>
+    <string name="log_user">Email</string>
     <string name="log_pass">Contraseña</string>
     <string name="log_btn_login">Ingresar</string>
     <string name="log_btn_register">Registrate</string>
@@ -19,4 +19,5 @@
     <string name="regis_desc">Ingresa un usuario y contraseña para poder ingresar al app.</string>
     <string name="regis_btn_register">Registrarse</string>
     <string name="regis_error_empty">Debes diligenciar correctamente los datos</string>
+    <string name="regis_desc_pass">Recuerda que la contraseña debe contar con lo siguiente:\nMínimo 8 caracteres.\nUna mayúscula.\nUna minúscula.\nUn número.\nUn caracter especial.</string>
 </resources>

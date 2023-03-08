@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.register.Register">
@@ -100,6 +101,18 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/lbdescPassRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:padding="@dimen/_6dp"
+            android:text="@string/regis_desc_pass"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tfPassRegister" />
+
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
@@ -108,7 +121,7 @@
             android:text="@string/regis_btn_register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tfPassRegister" />
+            app:layout_constraintTop_toBottomOf="@+id/lbdescPassRegister" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -14,7 +14,7 @@ public class RegisterUserUseCaseImpl implements RegisterUserUseCase {
     }
 
     @Override
-    public void registerUser(UserModel userModel, Resource<String> id) {
-        userRepository.registerUser(userModel, id);
+    public void registerUser(UserModel userModel, Resource<String> callback) {
+        userRepository.registerUser(userModel, callback);
     }
 }
