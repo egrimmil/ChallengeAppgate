@@ -11,7 +11,7 @@ public class BaseActivity extends AppCompatActivity implements UiEvent {
 
     @Override
     public void showLoading(Boolean isLoading) {
-        Snackbar snack = Snackbar.make(findViewById(R.id.contentLayout), "Estamos procesando tu solicitud", BaseTransientBottomBar.LENGTH_LONG);
+        Snackbar snack = Snackbar.make(findViewById(R.id.contentLayout), getString(R.string.description_loading), BaseTransientBottomBar.LENGTH_LONG);
         if(isLoading){
             snack.show();
         }else{

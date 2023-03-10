@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="@dimen/_10dp"
+    android:layout_marginTop="@dimen/_8dp"
+    android:id="@+id/contentHolderHome">
+
+    <TextView
+        android:id="@+id/lbDateHolderHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_16sp"
+        tools:text="2023/03/09"/>
+
+    <TextView
+        android:id="@+id/lbOperationHolderHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_16sp"
+        tools:text="Denegado" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

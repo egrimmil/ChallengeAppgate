@@ -1,16 +1,16 @@
 package com.elkin.challengeappgate.domain.models;
 
 public class UserModel {
-    private final String userName;
+    private final String userEmail;
     private final String userPass;
 
-    public UserModel(String userName, String userPass) {
-        this.userName = userName;
+    public UserModel(String userEmail, String userPass) {
+        this.userEmail = userEmail;
         this.userPass = userPass;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserEmail() {
+        return userEmail;
     }
 
     public String getUserPass() {

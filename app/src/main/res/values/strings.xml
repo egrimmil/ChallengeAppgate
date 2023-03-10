@@ -4,6 +4,7 @@
     <!-- commons -->
     <string name="accept">Aceptar</string>
     <string name="cancel">Cancelar</string>
+    <string name="description_loading">Estamos procesando tu solicitud</string>
 
     <string name="log_toolbar">Inicio Sesion</string>
     <string name="log_title">Bienvenido</string>
@@ -13,6 +14,7 @@
     <string name="log_btn_login">Ingresar</string>
     <string name="log_btn_register">Registrate</string>
     <string name="log_error_user_pass">Usuario y/o contraseña incorrectos</string>
+    <string name="log_request_location_denied">Para continuar por favor acepta los permisos de ubicación.</string>
 
     <string name="regis_toolbar">Registro</string>
     <string name="regis_title">Registrate</string>
@@ -20,4 +22,11 @@
     <string name="regis_btn_register">Registrarse</string>
     <string name="regis_error_empty">Debes diligenciar correctamente los datos</string>
     <string name="regis_desc_pass">Recuerda que la contraseña debe contar con lo siguiente:\nMínimo 8 caracteres.\nUna mayúscula.\nUna minúscula.\nUn número.\nUn caracter especial.</string>
+    <string name="regis_error_pass">Debes ingresar una contraseña valida</string>
+    <string name="regis_error_email">Debes ingresar un email valido</string>
+
+    <string name="home_label_toolbar">Inicio</string>
+    <string name="home_title">Aquí te mostramos la cantidad de veces que se valido tu usuario.</string>
+    <string name="home_title_date">Fecha</string>
+    <string name="home_title_result">Resultado</string>
 </resources>

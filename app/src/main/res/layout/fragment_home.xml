@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_10dp"
+    tools:context=".ui.home.fragments.HomeFragment">
+
+    <TextView
+        android:id="@+id/lbTitleHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_title"
+        android:textSize="@dimen/_18sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lyHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lbTitleHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_4dp"
+        android:padding="@dimen/_10dp">
+
+        <TextView
+            android:id="@+id/lbDateHolderHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            android:text="@string/home_title_date"/>
+
+        <TextView
+            android:id="@+id/lbOperationHolderHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            android:text="@string/home_title_result" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAttemptsHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyHome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/holder_home"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

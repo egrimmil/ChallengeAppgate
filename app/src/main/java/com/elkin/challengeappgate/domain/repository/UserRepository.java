@@ -5,6 +5,5 @@ import com.elkin.challengeappgate.utils.Resource;
 
 public interface UserRepository {
     void registerUser(UserModel userModel, Resource<String> callback);
-
-    UserModel getUsersId(int id, Resource<UserModel> userModel);
+    void getUserByEmailPass(UserModel userModel,  String latitude, String longitude, Resource<String> callback);
 }

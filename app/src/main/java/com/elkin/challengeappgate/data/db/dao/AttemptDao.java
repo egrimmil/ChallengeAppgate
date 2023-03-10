@@ -15,8 +15,8 @@ public interface AttemptDao {
     List<Attempts> getAllAttempts();
 
     @Insert
-    void insertAttempt(Attempts attempts);
+    Long insertAttempt(Attempts attempts);
 
     @Query("SELECT * FROM attempts WHERE userId == :id")
-    Attempts findByUserId(int id);
+    List<Attempts> findByUserId(int id);
 }
