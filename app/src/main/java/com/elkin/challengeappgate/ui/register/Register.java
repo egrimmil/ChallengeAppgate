@@ -24,7 +24,8 @@ public class Register extends BaseActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         viewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
-        viewModel.setParams(this, getApplicationContext());
+        viewModel.setParams(this);
+        viewModel.setRegisterUseCase(getApplicationContext());
         clickListeners();
     }
 
@@ -34,6 +35,8 @@ public class Register extends BaseActivity {
             String pass = Objects.requireNonNull(binding.tfEtPassRegister.getText()).toString().trim();
             viewModel.registerUser(name, pass);
         });
+
+        viewModel.getError().observe(this, integer -> showError(getString(integer)));
     }
 
     @Override

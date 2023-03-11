@@ -3,28 +3,35 @@ package com.elkin.challengeappgate.ui.register;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.elkin.challengeappgate.R;
-import com.elkin.challengeappgate.data.db.ChallengeDatabase;
-import com.elkin.challengeappgate.data.repository.UserRepositoryImpl;
-import com.elkin.challengeappgate.domain.models.UserModel;
-import com.elkin.challengeappgate.domain.use_case.RegisterUserUseCase;
-import com.elkin.challengeappgate.domain.use_case_impl.RegisterUserUseCaseImpl;
-import com.elkin.challengeappgate.utils.DataUtil;
-import com.elkin.challengeappgate.utils.Resource;
-import com.elkin.challengeappgate.utils.UiEvent;
+import com.elkin.commons.models.UserModel;
+import com.elkin.domain.di.RepositoryImplInstances;
+import com.elkin.domain.use_case.RegisterUserUseCase;
+import com.elkin.domain.use_case_impl.RegisterUserUseCaseImpl;
+import com.elkin.commons.utils.DataUtil;
+import com.elkin.commons.utils.Resource;
+import com.elkin.commons.utils.UiEvent;
 
 public class RegisterViewModel extends ViewModel {
 
     private UiEvent uiEvent;
-    private Context context;
     private RegisterUserUseCase userUseCase;
+    MutableLiveData<Integer> error = new MutableLiveData<>();
 
-    public void setParams(UiEvent events, Context context) {
+    public void setParams(UiEvent events) {
         this.uiEvent = events;
-        this.context = context;
-        userUseCase = new RegisterUserUseCaseImpl(new UserRepositoryImpl(ChallengeDatabase.getDataBase(context)));
+    }
+    public void setRegisterUseCase(Context context){
+        //userUseCase = new RegisterUserUseCaseImpl(new UserRepositoryImpl(ChallengeDatabase.getDataBase(context)));
+        userUseCase = new RegisterUserUseCaseImpl(RepositoryImplInstances.getUserRepositoryImpl(context));
+    }
+
+    public LiveData<Integer> getError(){
+        return error;
     }
 
     public void registerUser(String user, String pass) {
@@ -49,13 +56,13 @@ public class RegisterViewModel extends ViewModel {
                         }
                     });
                 } else {
-                    uiEvent.showError(context.getString(R.string.regis_error_pass));
+                    error.setValue(R.string.regis_error_pass);
                 }
             } else {
-                uiEvent.showError(context.getString(R.string.regis_error_email));
+                error.setValue(R.string.regis_error_email);
             }
         } else {
-            uiEvent.showError(context.getString(R.string.regis_error_empty));
+            error.setValue(R.string.regis_error_empty);
         }
     }
 }

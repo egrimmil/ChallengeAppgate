@@ -47,7 +47,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$versionsLibrary.androoidTestEspresso"
     //ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versionsLibrary.lifecycle_version"
-    //room
-    implementation "androidx.room:room-runtime:$versionsLibrary.room_version"
-    annotationProcessor "androidx.room:room-compiler:$versionsLibrary.room_version"
+
+    implementation project(path: ':app:domain')
+    implementation project(path: ':app:commons')
 }

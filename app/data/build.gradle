@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply from: "$rootProject.projectDir/buildsystem/versions.gradle"
+
+def configurations = ext.configuration
+def versionsLibrary = ext.libraries
+
+android {
+    namespace 'com.elkin.data'
+    compileSdk configurations.compileSdk
+
+    defaultConfig {
+        minSdk configurations.minSdk
+        targetSdk configurations.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation "androidx.appcompat:appcompat:$versionsLibrary.appCompat"
+    implementation "com.google.android.material:material:$versionsLibrary.material"
+    implementation project(path: ':app:commons')
+    testImplementation "junit:junit:4$versionsLibrary.testImplJunit"
+    androidTestImplementation "androidx.test.ext:junit:$versionsLibrary.androidTestJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versionsLibrary.androoidTestEspresso"
+    //room
+    implementation "androidx.room:room-runtime:$versionsLibrary.room_version"
+    annotationProcessor "androidx.room:room-compiler:$versionsLibrary.room_version"
+}

@@ -9,9 +9,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.elkin.challengeappgate.R;
-import com.elkin.challengeappgate.data.db.entities.Attempts;
 import com.elkin.challengeappgate.databinding.HolderHomeBinding;
-import com.elkin.challengeappgate.utils.DataUtil;
+import com.elkin.commons.utils.DataUtil;
+import com.elkin.domain.models.AttemptModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HolderHome> {
 
-    private List<Attempts> attemptsList = new ArrayList<>();
+    private List<AttemptModel> attemptsList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -37,9 +37,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HolderHome> {
         return attemptsList.size();
     }
 
-    public void loadAttempts(List<Attempts> attempts) {
+    public void loadAttempts(List<AttemptModel> attempts) {
         this.attemptsList = attempts;
-        notifyAll();
     }
 
     public static class HolderHome extends RecyclerView.ViewHolder {
@@ -51,7 +50,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HolderHome> {
             binding = HolderHomeBinding.bind(itemView);
         }
 
-        public void onBind(Attempts attempts) {
+        public void onBind(AttemptModel attempts) {
             binding.lbDateHolderHome.setText(DataUtil.dateFormatToFormat(attempts.getDate(), "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", "dd/MM/yyyy"));
             binding.lbOperationHolderHome.setText(attempts.getResult());
             if (attempts.getResult().toLowerCase(Locale.ROOT).equals("denegado")) {

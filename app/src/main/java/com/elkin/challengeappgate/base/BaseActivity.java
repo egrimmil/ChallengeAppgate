@@ -3,7 +3,7 @@ package com.elkin.challengeappgate.base;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.elkin.challengeappgate.R;
-import com.elkin.challengeappgate.utils.UiEvent;
+import com.elkin.commons.utils.UiEvent;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 

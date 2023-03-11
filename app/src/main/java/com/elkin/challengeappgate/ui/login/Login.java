@@ -1,14 +1,10 @@
 package com.elkin.challengeappgate.ui.login;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -25,9 +21,6 @@ import com.elkin.challengeappgate.base.BaseActivity;
 import com.elkin.challengeappgate.databinding.ActivityLoginBinding;
 import com.elkin.challengeappgate.ui.home.MainActivity;
 import com.elkin.challengeappgate.ui.register.Register;
-import com.elkin.challengeappgate.ui.register.RegisterViewModel;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Objects;
 
@@ -44,7 +37,8 @@ public class Login extends BaseActivity implements LocationListener {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-        viewModel.setParamsInit(this, getApplicationContext());
+        viewModel.setParamsInit(this);
+        viewModel.setLoginUseCase(getApplicationContext());
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         checkPermissions();
         clickListeners();
@@ -57,9 +51,9 @@ public class Login extends BaseActivity implements LocationListener {
             viewModel.validateUser(user, pass);
         });
 
-        binding.btnRegisLogin.setOnClickListener(view -> {
-            onNavigate(this, Register.class);
-        });
+        binding.btnRegisLogin.setOnClickListener(view -> onNavigate(this, Register.class));
+
+        viewModel.getError().observe(this, integer -> showError(getString(integer)));
     }
 
     private void checkPermissions() {

@@ -32,7 +32,8 @@ public class HomeFragment extends BaseFragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
-        viewModel.setContext(requireActivity(), this);
+        viewModel.setParams(this);
+        viewModel.setHomeUseCase(requireActivity());
         binding.rvAttemptsHome.setAdapter(adapter);
     }
 
